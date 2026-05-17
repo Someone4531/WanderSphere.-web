@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life_in a Sphere — Explore the World's Most Beautiful Places</title>
+  <meta name="description" content="Life_in a Sphere is your ultimate travel guide to India and the world. Discover hidden gems, iconic destinations, travel tips, food experiences and cultural insights." />
+  <meta name="keywords" content="travel, India tourism, Taj Mahal, Kerala, Jaipur, Ladakh, Varanasi, Bali, Santorini, travel blog, destinations" />
+  <meta property="og:title" content="Life_in a Sphere — Travel & Tourism Magazine" />
+  <meta property="og:description" content="Discover the world's most beautiful places through the lens of a passionate traveller." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── Home-page specific styles ── */
+    .featured-sec  { padding:100px 0; }
+    .trends-sec    { padding:100px 0; background:var(--bg-secondary); }
+    .articles-sec  { padding:100px 0; }
+    .gallery-sec   { padding:100px 0; background:var(--bg-secondary); }
+    .cta-strip {
+      padding:80px 0;
+      background:linear-gradient(135deg,var(--amber),var(--gold));
+      text-align:center; position:relative; overflow:hidden;
+    }
+    .cta-strip::before {
+      content:''; position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=30') center/cover;
+      opacity:0.08;
+    }
+    .cta-strip h2 {
+      font-family:var(--font-display); font-size:clamp(1.8rem,5vw,3rem);
+      font-weight:900; color:#fff; margin-bottom:14px; position:relative;
+    }
+    .cta-strip p { color:rgba(255,255,255,0.82); font-size:1.05rem; margin-bottom:32px; position:relative; }
+    .cta-strip .btn-ghost { font-size:0.95rem; padding:15px 38px; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-orb">🌍</div>
+      <span>Life<span class="logo-text-accent">_in</span> a Sphere</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="searchBtn" aria-label="Search" title="Search"><i class="fas fa-search"></i></button>
+      <button class="nav-icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme"><i class="fas fa-moon"></i></button>
+      <a href="destinations.html" class="btn btn-primary" style="padding:9px 22px;font-size:0.82rem">Explore</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="destinations.html">Destinations</a>
+  <a href="blog.html">Blog</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Search Overlay -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="text" placeholder="Search destinations, articles, travel tips…" />
+      <button class="search-x" id="searchClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="search-hints">
+      <p>Popular Searches</p>
+      <div class="hint-tags">
+        <span class="hint-tag">Taj Mahal</span>
+        <span class="hint-tag">Kerala Backwaters</span>
+        <span class="hint-tag">Ladakh</span>
+        <span class="hint-tag">Bali</span>
+        <span class="hint-tag">Swiss Alps</span>
+        <span class="hint-tag">Santorini</span>
+        <span class="hint-tag">Varanasi</span>
+        <span class="hint-tag">Rajasthan</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <i class="fas fa-globe-asia"></i>
+      Explore · Discover · Experience
+    </div>
+    <h1 class="hero-h1">
+      Every Journey<br>
+      <em>Tells a Story</em>
+    </h1>
+    <p class="hero-sub">
+      From the golden ghats of Varanasi to the snow-capped peaks of Ladakh —
+      dive into the world's most breathtaking destinations, hidden gems and cultural wonders.
+    </p>
+    <div class="hero-btns">
+      <a href="destinations.html" class="btn btn-primary"><i class="fas fa-compass"></i> Start Exploring</a>
+      <a href="blog.html" class="btn btn-ghost"><i class="fas fa-book-open"></i> Read Articles</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">200+</div>
+        <div class="stat-lbl">Destinations</div>
+      </div>
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-lbl">Articles</div>
+      </div>
+      <div>
+        <div class="stat-num">50K+</div>
+        <div class="stat-lbl">Explorers</div>
+      </div>
+      <div>
+        <div class="stat-num">30+</div>
+        <div class="stat-lbl">Countries</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FEATURED DESTINATIONS
+══════════════════════════════════════ -->
+<section class="featured-sec">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div>
+        <span class="sec-label">Featured Destinations</span>
+        <h2 class="sec-title">Places That <em>Take Your Breath Away</em></h2>
+        <p class="sec-sub">Handpicked wonders from across India and the globe, curated by our team of passionate explorers.</p>
+      </div>
+      <a href="destinations.html" class="btn btn-outline reveal delay-1">View All <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="dest-grid-hero">
+
+      <!-- Card 1 — Large -->
+      <a href="destinations.html#taj-mahal" class="dc reveal">
+        <div class="dc-img-wrap">
+          <img class="dc-img" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=900&q=80" alt="Taj Mahal, Agra" loading="lazy" />
+          <div class="dc-overlay"></div>
+          <div class="dc-badge"><span class="badge badge-gold">⭐ Top Pick</span></div>
+          <div class="dc-info">
+            <p class="dc-country">India · Uttar Pradesh</p>
+            <h3 class="dc-title">Taj Mahal, Agra</h3>
+            <p class="dc-desc">One of the Seven Wonders of the World — a timeless monument of love built by Mughal emperor Shah Jahan.</p>
+            <div class="dc-meta">
+              <div class="dc-rating"><span class="stars">★★★★★</span> 4.9</div>
+              <div class="dc-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="destinations.html#kerala" class="dc reveal delay-1">
+        <div class="dc-img-wrap">
+          <img class="dc-img" src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=700&q=80" alt="Kerala Backwaters" loading="lazy" />
+          <div class="dc-overlay"></div>
+          <div class="dc-badge"><span class="badge badge-teal">Nature</span></div>
+          <div class="dc-info">
+            <p class="dc-country">India · Kerala</p>
+            <h3 class="dc-title">Kerala Backwaters</h3>
+            <div class="dc-meta">
+              <div class="dc-rating"><span class="stars">★★★★★</span> 4.8</div>
+              <div class="dc-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="destinations.html#ladakh" class="dc reveal delay-2">
+        <div class="dc-img-wrap">
+          <img class="dc-img" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=700&q=80" alt="Ladakh" loading="lazy" />
+          <div class="dc-overlay"></div>
+          <div class="dc-badge"><span class="badge badge-amber">Adventure</span></div>
+          <div class="dc-info">
+            <p class="dc-country">India · Jammu & Kashmir</p>
+            <h3 class="dc-title">Ladakh</h3>
+            <div class="dc-meta">
+              <div class="dc-rating"><span class="stars">★★★★★</span> 4.9</div>
+              <div class="dc-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="destinations.html#santorini" class="dc reveal delay-3">
+        <div class="dc-img-wrap">
+          <img class="dc-img" src="https://images.unsplash.com/photo-1503152394-c571994fd383?w=700&q=80" alt="Santorini" loading="lazy" />
+          <div class="dc-overlay"></div>
+          <div class="dc-badge"><span class="badge badge-teal">Europe</span></div>
+          <div class="dc-info">
+            <p class="dc-country">Greece · Aegean Sea</p>
+            <h3 class="dc-title">Santorini</h3>
+            <div class="dc-meta">
+              <div class="dc-rating"><span class="stars">★★★★★</span> 4.8</div>
+              <div class="dc-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     TRENDING INDIAN SPOTS
+══════════════════════════════════════ -->
+<section class="trends-sec">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div>
+        <span class="sec-label">Trending Now</span>
+        <h2 class="sec-title">India's Must-Visit <em>Treasures</em></h2>
+        <p class="sec-sub">Iconic, offbeat, and unforgettable — the top Indian destinations capturing every traveller's heart.</p>
+      </div>
+      <a href="destinations.html?cat=india" class="btn btn-outline reveal delay-1">All India <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="trend-grid">
+
+      <div class="trend-card reveal">
+        <div class="tc-img-wrap">
+          <img class="tc-img" src="https://images.unsplash.com/photo-1477587458883-47145ed68f07?w=600&q=80" alt="Varanasi Ghats" loading="lazy" />
+        </div>
+        <div class="tc-body">
+          <p class="tc-cat">Spiritual · Heritage</p>
+          <h3 class="tc-title">Varanasi Ghats</h3>
+          <p class="tc-desc">One of the world's oldest living cities. The sacred ghats along the Ganges are a mesmerising tapestry of life, faith and ancient ritual.</p>
+          <div class="tc-foot">
+            <div class="tc-rating"><span class="stars">★★★★★</span> 4.8</div>
+            <a href="destinations.html#varanasi" class="btn btn-outline" style="padding:7px 16px;font-size:0.78rem">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="trend-card reveal delay-1">
+        <div class="tc-img-wrap">
+          <img class="tc-img" src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Jaipur Pink City" loading="lazy" />
+        </div>
+        <div class="tc-body">
+          <p class="tc-cat">Heritage · Culture</p>
+          <h3 class="tc-title">Jaipur — The Pink City</h3>
+          <p class="tc-desc">Rajasthan's royal capital is a vibrant canvas of pink sandstone palaces, grand forts, bustling bazaars and legendary hospitality.</p>
+          <div class="tc-foot">
+            <div class="tc-rating"><span class="stars">★★★★★</span> 4.7</div>
+            <a href="destinations.html#jaipur" class="btn btn-outline" style="padding:7px 16px;font-size:0.78rem">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="trend-card reveal delay-2">
+        <div class="tc-img-wrap">
+          <img class="tc-img" src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=600&q=80" alt="Rann of Kutch" loading="lazy" />
+        </div>
+        <div class="tc-body">
+          <p class="tc-cat">Hidden Gem · Nature</p>
+          <h3 class="tc-title">Rann of Kutch</h3>
+          <p class="tc-desc">The world's largest salt desert transforms into a surreal moonlit landscape under the full moon — an otherworldly experience in Gujarat.</p>
+          <div class="tc-foot">
+            <div class="tc-rating"><span class="stars">★★★★☆</span> 4.6</div>
+            <a href="destinations.html#kutch" class="btn btn-outline" style="padding:7px 16px;font-size:0.78rem">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="trend-card reveal delay-3">
+        <div class="tc-img-wrap">
+          <img class="tc-img" src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80" alt="Andaman Islands" loading="lazy" />
+        </div>
+        <div class="tc-body">
+          <p class="tc-cat">Beach · Nature</p>
+          <h3 class="tc-title">Andaman Islands</h3>
+          <p class="tc-desc">Crystal-clear waters, untouched coral reefs and pristine white-sand beaches make the Andamans one of Asia's finest island escapes.</p>
+          <div class="tc-foot">
+            <div class="tc-rating"><span class="stars">★★★★★</span> 4.9</div>
+            <a href="destinations.html#andaman" class="btn btn-outline" style="padding:7px 16px;font-size:0.78rem">Explore</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     POPULAR ARTICLES
+══════════════════════════════════════ -->
+<section class="articles-sec">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div>
+        <span class="sec-label">From the Magazine</span>
+        <h2 class="sec-title">Stories That <em>Inspire Wanderlust</em></h2>
+      </div>
+      <a href="blog.html" class="btn btn-outline reveal delay-1">All Articles <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="blog-layout">
+
+      <!-- Featured Article -->
+      <a href="blog.html#article-1" class="blog-feat reveal">
+        <img class="blog-feat-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="Swiss Alps" loading="lazy" />
+        <div class="blog-feat-ov"></div>
+        <div class="blog-feat-body">
+          <span class="badge badge-gold">Travel Guide</span>
+          <h3 class="bf-title">7 Days in the Swiss Alps: The Ultimate Mountain Experience</h3>
+          <p class="bf-excerpt">From Zermatt to Grindelwald — a curated road-trip through Europe's most iconic peaks, cosy chalets and world-class ski trails.</p>
+          <div class="bf-meta">
+            <span><i class="fas fa-user"></i> Aryan Mehta</span>
+            <span><i class="fas fa-calendar"></i> May 2025</span>
+            <span><i class="fas fa-clock"></i> 8 min read</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Sidebar Articles -->
+      <div class="blog-sidebar">
+
+        <a href="blog.html#article-2" class="blog-list-card reveal delay-1">
+          <img class="blc-img" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=200&q=80" alt="Bali" loading="lazy" />
+          <div>
+            <p class="blc-cat">Culture</p>
+            <h4 class="blc-title">Bali Beyond the Temples: Local Secrets Most Tourists Miss</h4>
+            <p class="blc-meta">Priya Sharma · 6 min read</p>
+          </div>
+        </a>
+
+        <a href="blog.html#article-3" class="blog-list-card reveal delay-2">
+          <img class="blc-img" src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=200&q=80" alt="Rajasthan Food" loading="lazy" />
+          <div>
+            <p class="blc-cat">Food & Culture</p>
+            <h4 class="blc-title">A Foodie's Guide to Rajasthan: Dal Baati to Ghewar</h4>
+            <p class="blc-meta">Riya Kapoor · 5 min read</p>
+          </div>
+        </a>
+
+        <a href="blog.html#article-4" class="blog-list-card reveal delay-3">
+          <img class="blc-img" src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=200&q=80" alt="Ladakh Monastery" loading="lazy" />
+          <div>
+            <p class="blc-cat">Spiritual · Photography</p>
+            <h4 class="blc-title">Monasteries of Ladakh: A Visual and Spiritual Journey</h4>
+            <p class="blc-meta">Dev Kapoor · 7 min read</p>
+          </div>
+        </a>
+
+        <a href="blog.html#article-5" class="blog-list-card reveal delay-4">
+          <img class="blc-img" src="https://images.unsplash.com/photo-1559818765-6bcf9600e519?w=200&q=80" alt="Kerala Houseboat" loading="lazy" />
+          <div>
+            <p class="blc-cat">Travel Tips</p>
+            <h4 class="blc-title">Kerala Houseboat: Everything You Need to Know Before Booking</h4>
+            <p class="blc-meta">Meera Nair · 4 min read</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PHOTO GALLERY
+══════════════════════════════════════ -->
+<section class="gallery-sec">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div>
+        <span class="sec-label">Visual Journal</span>
+        <h2 class="sec-title">Through the <em>Traveller's Lens</em></h2>
+        <p class="sec-sub">A snapshot of the world's most awe-inspiring vistas, captured by our community.</p>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gi reveal"><img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=900&q=80" alt="India Gateway" loading="lazy" /><div class="gi-ov"><i class="fas fa-expand"></i></div></div>
+      <div class="gi reveal delay-1"><img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80" alt="Bali Terrace" loading="lazy" /><div class="gi-ov"><i class="fas fa-expand"></i></div></div>
+      <div class="gi reveal delay-2"><img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=80" alt="Swiss Mountains" loading="lazy" /><div class="gi-ov"><i class="fas fa-expand"></i></div></div>
+      <div class="gi reveal delay-3"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80" alt="Jaipur Fort" loading="lazy" /><div class="gi-ov"><i class="fas fa-expand"></i></div></div>
+      <div class="gi reveal delay-1"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=600&q=80" alt="Santorini Sunset" loading="lazy" /><div class="gi-ov"><i class="fas fa-expand"></i></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CTA STRIP
+══════════════════════════════════════ -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Ready to Discover Your Next Adventure?</h2>
+    <p>Browse 200+ curated destinations — from India's soul-stirring ghats to Europe's azure coastlines.</p>
+    <a href="destinations.html" class="btn btn-ghost"><i class="fas fa-compass"></i> Explore Destinations</a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     NEWSLETTER
+══════════════════════════════════════ -->
+<section class="newsletter-sec">
+  <div class="container">
+    <div class="newsletter-inner">
+      <span class="sec-label">Stay Inspired</span>
+      <h2 class="sec-title">Get Weekly <em>Travel Stories</em></h2>
+      <p class="sec-sub">Join 50,000+ explorers. Receive handpicked destinations, hidden gems and travel tips — straight to your inbox, every Thursday.</p>
+      <form class="nl-form" onsubmit="handleNewsletter(event)">
+        <input class="nl-input" type="email" placeholder="Your email address" required />
+        <button type="submit" class="btn btn-primary">Subscribe <i class="fas fa-paper-plane"></i></button>
+      </form>
+      <p id="nl-msg" style="margin-top:14px;color:var(--gold);font-size:0.85rem;min-height:20px;"></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-orb">🌍</div>
+          <span>Life<span class="logo-text-accent">_in</span> a Sphere</span>
+        </a>
+        <p>Your ultimate travel companion — exploring India's rich heritage and the world's most beautiful destinations through immersive storytelling.</p>
+        <div class="socials">
+          <a href="#" class="soc-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="soc-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="soc-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="soc-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Destinations</h4>
+        <nav class="footer-links">
+          <a href="destinations.html?cat=india">India</a>
+          <a href="destinations.html?cat=asia">Asia</a>
+          <a href="destinations.html?cat=europe">Europe</a>
+          <a href="destinations.html?cat=beaches">Beaches</a>
+          <a href="destinations.html?cat=mountains">Mountains</a>
+          <a href="destinations.html?cat=heritage">Heritage Sites</a>
+          <a href="destinations.html?cat=spiritual">Spiritual Places</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Magazine</h4>
+        <nav class="footer-links">
+          <a href="blog.html?cat=tips">Travel Tips</a>
+          <a href="blog.html?cat=food">Food & Culture</a>
+          <a href="blog.html?cat=photography">Photography</a>
+          <a href="blog.html?cat=guides">Travel Guides</a>
+          <a href="blog.html?cat=hidden">Hidden Gems</a>
+          <a href="blog.html?cat=top10">Top 10 Lists</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <nav class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="#">Write for Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Life_in a Sphere. Crafted with ❤️ for travellers worldwide.</p>
+      <p>Made with passion for India & the world 🌏</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="btt" id="btt" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<script src="main.js"></script>
+</body>
+</html>

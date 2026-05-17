@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Magazine — Life_in a Sphere</title>
+  <meta name="description" content="Travel stories, destination reviews, food experiences, photography guides and cultural insights from around the world and India." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .blog-pg-hero {
+      padding:160px 0 84px; position:relative; text-align:center;
+      background:var(--bg-secondary); overflow:hidden;
+    }
+    .blog-pg-hero::before {
+      content:''; position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=40') center/cover;
+      opacity:0.1;
+    }
+    .blog-pg-hero > * { position:relative; }
+    .blog-pg-section { padding:80px 0 100px; }
+    /* Comment section */
+    .comment-sec { background:var(--bg-card); border-radius:var(--radius-md); padding:30px; border:1px solid var(--border); }
+    .comment-sec h3 { font-family:var(--font-display); font-size:1.2rem; color:var(--text-primary); margin-bottom:18px; }
+    .comment-item { border-bottom:1px solid var(--border); padding:16px 0; }
+    .comment-item:last-child { border-bottom:none; }
+    .c-name { font-weight:700; font-size:0.88rem; color:var(--text-primary); margin-bottom:3px; }
+    .c-date { font-size:0.73rem; color:var(--text-muted); margin-bottom:7px; }
+    .c-text { font-size:0.86rem; color:var(--text-secondary); line-height:1.72; }
+    /* Social share */
+    .share-bar { display:flex; gap:9px; align-items:center; flex-wrap:wrap; }
+    .share-btn {
+      display:inline-flex; align-items:center; gap:7px;
+      padding:7px 16px; border-radius:50px; font-size:0.76rem;
+      font-weight:700; cursor:pointer; border:1.5px solid var(--border);
+      background:transparent; color:var(--text-secondary);
+      font-family:var(--font-body); transition:var(--transition);
+    }
+    .share-btn:hover { border-color:var(--amber); color:var(--amber); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-orb">🌍</div><span>Life<span class="logo-text-accent">_in</span> a Sphere</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+      <button class="nav-icon-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
+      <a href="destinations.html" class="btn btn-primary" style="padding:9px 22px;font-size:0.82rem">Explore</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="destinations.html">Destinations</a>
+  <a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="text" placeholder="Search articles…" />
+      <button class="search-x" id="searchClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="search-hints"><p>Popular Topics</p>
+      <div class="hint-tags">
+        <span class="hint-tag">Travel Tips</span><span class="hint-tag">Food Guide</span>
+        <span class="hint-tag">Photography</span><span class="hint-tag">Hidden Gems</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="blog-pg-hero">
+  <div class="container">
+    <span class="sec-label">The Travel Magazine</span>
+    <h1 class="sec-title" style="font-size:clamp(2.4rem,6vw,4rem)">Stories, Guides &amp; <em>Inspirations</em></h1>
+    <p class="sec-sub" style="margin:0 auto 0;">Expert travel writing, cultural deep-dives, food adventures and photography from around the world.</p>
+  </div>
+</section>
+
+<!-- BLOG CONTENT -->
+<section class="blog-pg-section">
+  <div class="container">
+
+    <!-- Category Filter -->
+    <div class="cat-bar reveal">
+      <button class="cat-btn active" data-bcat="all">📖 All</button>
+      <button class="cat-btn" data-bcat="guides">🗺️ Guides</button>
+      <button class="cat-btn" data-bcat="tips">💡 Travel Tips</button>
+      <button class="cat-btn" data-bcat="food">🍛 Food</button>
+      <button class="cat-btn" data-bcat="culture">🎭 Culture</button>
+      <button class="cat-btn" data-bcat="photography">📷 Photography</button>
+      <button class="cat-btn" data-bcat="hidden">🔍 Hidden Gems</button>
+      <button class="cat-btn" data-bcat="top10">🏆 Top 10</button>
+    </div>
+
+    <!-- Two-column: Articles + Sidebar -->
+    <div class="blog-page-grid">
+
+      <!-- Main Article List -->
+      <div class="blog-main-list" id="blogList">
+
+        <!-- Article 1 -->
+        <article class="blog-article reveal" id="article-1" data-bcat="guides mountains">
+          <div class="ba-img-wrap">
+            <img class="ba-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Swiss Alps" loading="lazy" />
+          </div>
+          <div class="ba-body">
+            <p class="ba-cat">Travel Guide · Mountains</p>
+            <h2 class="ba-title">7 Days in the Swiss Alps: The Ultimate Mountain Experience</h2>
+            <p class="ba-excerpt">From Zermatt to Grindelwald — a curated road-trip through Europe's most iconic peaks, snowy passes, cosy mountain chalets and world-class ski slopes. We cover the best viewpoints, cable cars and hidden alpine restaurants that most tourists never discover.</p>
+            <div class="ba-meta">
+              <span><i class="fas fa-user"></i> Aryan Mehta</span>
+              <span><i class="fas fa-calendar"></i> May 2025</span>
+              <span><i class="fas fa-clock"></i> 8 min read</span>
+            </div>
+            <div class="share-bar" style="margin-top:14px;">
+              <span style="font-size:0.76rem;color:var(--text-muted);font-weight:700;">Share:</span>
+              <button class="share-btn"><i class="fab fa-x-twitter"></i> Twitter</button>
+              <button class="share-btn"><i class="fab fa-facebook-f"></i> Facebook</button>
+              <button class="share-btn"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-article reveal" id="article-2" data-bcat="culture asia">
+          <div class="ba-img-wrap">
+            <img class="ba-img" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali" loading="lazy" />
+          </div>
+          <div class="ba-body">
+            <p class="ba-cat">Culture · Asia</p>
+            <h2 class="ba-title">Bali Beyond the Temples: Local Secrets Most Tourists Miss</h2>
+            <p class="ba-excerpt">Everyone knows Tanah Lot and the Tegalalang rice terraces — but Bali's real magic lives in the quiet villages of Sidemen, the black-sand beaches of Lovina and sunrise ceremonies that locals perform before dawn. A deep dive into authentic Balinese culture.</p>
+            <div class="ba-meta">
+              <span><i class="fas fa-user"></i> Priya Sharma</span>
+              <span><i class="fas fa-calendar"></i> Apr 2025</span>
+              <span><i class="fas fa-clock"></i> 6 min read</span>
+            </div>
+            <div class="share-bar" style="margin-top:14px;">
+              <span style="font-size:0.76rem;color:var(--text-muted);font-weight:700;">Share:</span>
+              <button class="share-btn"><i class="fab fa-x-twitter"></i> Twitter</button>
+              <button class="share-btn"><i class="fab fa-instagram"></i> Instagram</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-article reveal" id="article-3" data-bcat="food india">
+          <div class="ba-img-wrap">
+            <img class="ba-img" src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=600&q=80" alt="Rajasthan Food" loading="lazy" />
+          </div>
+          <div class="ba-body">
+            <p class="ba-cat">Food & Culture · India</p>
+            <h2 class="ba-title">A Foodie's Guide to Rajasthan: Dal Baati to Ghewar</h2>
+            <p class="ba-excerpt">Rajasthan's cuisine is as bold and colourful as its forts. We sampled dal baati churma in Jaipur, laal maas in Jodhpur, gatte ki sabzi in Bikaner, and the legendary mawa kachori — and brought back every recipe and secret ingredient along the way.</p>
+            <div class="ba-meta">
+              <span><i class="fas fa-user"></i> Riya Kapoor</span>
+              <span><i class="fas fa-calendar"></i> Apr 2025</span>
+              <span><i class="fas fa-clock"></i> 5 min read</span>
+            </div>
+            <div class="share-bar" style="margin-top:14px;">
+              <span style="font-size:0.76rem;color:var(--text-muted);font-weight:700;">Share:</span>
+              <button class="share-btn"><i class="fab fa-x-twitter"></i> Twitter</button>
+              <button class="share-btn"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="blog-article reveal" id="article-4" data-bcat="photography india">
+          <div class="ba-img-wrap">
+            <img class="ba-img" src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=600&q=80" alt="Ladakh Monastery" loading="lazy" />
+          </div>
+          <div class="ba-body">
+            <p class="ba-cat">Photography · Spiritual · India</p>
+            <h2 class="ba-title" id="ladakh-article">Monasteries of Ladakh: A Visual and Spiritual Journey</h2>
+            <p class="ba-excerpt">The ancient gompas of Ladakh — Hemis, Thiksey, Diskit — perched on clifftops with prayer flags snapping in the Himalayan wind. A photographer's guide to the golden-hour light, best compositions and the moving rituals that take place within these sacred walls.</p>
+            <div class="ba-meta">
+              <span><i class="fas fa-user"></i> Dev Kapoor</span>
+              <span><i class="fas fa-calendar"></i> Mar 2025</span>
+              <span><i class="fas fa-clock"></i> 7 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="blog-article reveal" id="article-5" data-bcat="tips india">
+          <div class="ba-img-wrap">
+            <img class="ba-img" src="https://images.unsplash.com/photo-1559818765-6bcf9600e519?w=600&q=80" alt="Kerala Houseboat" loading="lazy" />
+          </div>
+          <div class="ba-body">
+            <p class="ba-cat">Travel Tips · India</p>
+            <h2 class="ba-title" id="kerala-article">Kerala Houseboat: Everything You Need to Know Before Booking</h2>
+            <p class="ba-excerpt">Season tips, best routes (Alleppey vs Kumarakom), budget vs luxury comparisons, what food is served on board, how to avoid tourist crowds, and the best way to see the backwaters at sunrise — all you need before booking your dream Kerala houseboat cruise.</p>
+            <div class="ba-meta">
+              <span><i class="fas fa-user"></i> Meera Nair</span>
+              <span><i class="fas fa-calendar"></i> Mar 2025</span>
+              <span><i class="fas fa-clock"></i> 4 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="blog-article reveal" id="article-6" data-bcat="top10 india">
+          <div class="ba-img-wrap">
+            <img class="ba-img" src="https://images.unsplash.com/photo-1477587458883-47145ed68f07?w=600&q=80" alt="Varanasi" loading="lazy" />
+          </div>
+          <div class="ba-body">
+            <p class="ba-cat">Top 10 · Spiritual · India</p>
+            <h2 class="ba-title" id="varanasi-article">10 Things to Do in Varanasi That Will Change Your Perspective on Life</h2>
+            <p class="ba-excerpt">Attend the Ganga Aarti, take a pre-dawn boat ride, visit Sarnath, eat kachori sabzi at a street stall, explore the silk weaving workshops, cycle through narrow alleys, witness life and death on the ghats — Varanasi is unlike anywhere on Earth.</p>
+            <div class="ba-meta">
+              <span><i class="fas fa-user"></i> Rahul Pandey</span>
+              <span><i class="fas fa-calendar"></i> Feb 2025</span>
+              <span><i class="fas fa-clock"></i> 9 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 7 -->
+        <article class="blog-article reveal" id="jaipur-article" data-bcat="top10 india heritage">
+          <div class="ba-img-wrap">
+            <img class="ba-img" src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Jaipur" loading="lazy" />
+          </div>
+          <div class="ba-body">
+            <p class="ba-cat">Top 10 · Heritage · India</p>
+            <h2 class="ba-title">Top 10 Things to See in Jaipur's Old City</h2>
+            <p class="ba-excerpt">Discover the majestic Amber Fort, the Jantar Mantar astronomical observatory, Hawa Mahal's latticed facade, the City Palace's royal chambers, and Jaipur's legendary bazaars where every turn reveals a treasure of textiles, gems and royal craftsmanship.</p>
+            <div class="ba-meta">
+              <span><i class="fas fa-user"></i> Sneha Singh</span>
+              <span><i class="fas fa-calendar"></i> Jan 2025</span>
+              <span><i class="fas fa-clock"></i> 6 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 8 -->
+        <article class="blog-article reveal" id="taj-article" data-bcat="hidden guides india heritage">
+          <div class="ba-img-wrap">
+            <img class="ba-img" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&q=80" alt="Taj Mahal" loading="lazy" />
+          </div>
+          <div class="ba-body">
+            <p class="ba-cat">Guide · Heritage · India</p>
+            <h2 class="ba-title" id="taj-article-heading">Taj Mahal Insider Guide: Secrets, History &amp; Best Times to Visit</h2>
+            <p class="ba-excerpt">Beyond the famous photograph: the symbolism behind the four minarets, the optical illusion that makes the monument appear larger as you walk away, the moon garden on the other side of the Yamuna, the inscriptions that change colour in different light — Agra's crown jewel holds more secrets than most realise.</p>
+            <div class="ba-meta">
+              <span><i class="fas fa-user"></i> Aryan Mehta</span>
+              <span><i class="fas fa-calendar"></i> Dec 2024</span>
+              <span><i class="fas fa-clock"></i> 10 min read</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /blog-main-list -->
+
+      <!-- SIDEBAR -->
+      <aside>
+
+        <!-- Popular Posts -->
+        <div class="widget reveal">
+          <h3>🔥 Most Read</h3>
+          <div class="popular-item">
+            <img class="pop-img" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=200&q=70" alt="Taj Mahal" loading="lazy" />
+            <div><p class="pop-title">Taj Mahal Insider Guide</p><p class="pop-meta">10 min · Heritage</p></div>
+          </div>
+          <div class="popular-item">
+            <img class="pop-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=70" alt="Swiss Alps" loading="lazy" />
+            <div><p class="pop-title">7 Days in the Swiss Alps</p><p class="pop-meta">8 min · Guide</p></div>
+          </div>
+          <div class="popular-item">
+            <img class="pop-img" src="https://images.unsplash.com/photo-1477587458883-47145ed68f07?w=200&q=70" alt="Varanasi" loading="lazy" />
+            <div><p class="pop-title">10 Things to Do in Varanasi</p><p class="pop-meta">9 min · Top 10</p></div>
+          </div>
+          <div class="popular-item">
+            <img class="pop-img" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=200&q=70" alt="Ladakh" loading="lazy" />
+            <div><p class="pop-title">Monasteries of Ladakh</p><p class="pop-meta">7 min · Photography</p></div>
+          </div>
+        </div>
+
+        <!-- Tags Cloud -->
+        <div class="widget reveal delay-1">
+          <h3>🏷️ Explore Topics</h3>
+          <div class="tags-cloud">
+            <span class="tag">India</span><span class="tag">Beaches</span>
+            <span class="tag">Mountains</span><span class="tag">Food</span>
+            <span class="tag">Heritage</span><span class="tag">Spiritual</span>
+            <span class="tag">Adventure</span><span class="tag">Photography</span>
+            <span class="tag">Budget Travel</span><span class="tag">Luxury</span>
+            <span class="tag">Monsoon</span><span class="tag">Winter</span>
+            <span class="tag">Road Trip</span><span class="tag">Solo Travel</span>
+            <span class="tag">Rajasthan</span><span class="tag">Kerala</span>
+          </div>
+        </div>
+
+        <!-- Comment Placeholder -->
+        <div class="widget comment-sec reveal delay-2">
+          <h3>💬 Reader Comments</h3>
+          <div class="comment-item">
+            <p class="c-name">Anjali Verma</p>
+            <p class="c-date">May 10, 2025</p>
+            <p class="c-text">"The Ladakh article is absolutely stunning! Booked my trip after reading this. Thank you for such detailed information!"</p>
+          </div>
+          <div class="comment-item">
+            <p class="c-name">Rohan Gupta</p>
+            <p class="c-date">May 8, 2025</p>
+            <p class="c-text">"Your Kerala houseboat guide saved us so much time in research. Everything was accurate and useful!"</p>
+          </div>
+          <div class="comment-item">
+            <p class="c-name">Sarah Mitchell</p>
+            <p class="c-date">May 5, 2025</p>
+            <p class="c-text">"As a photographer visiting India for the first time, this blog has been my #1 resource. The photography tips are gold!"</p>
+          </div>
+        </div>
+
+        <!-- Newsletter mini -->
+        <div class="widget reveal delay-3" style="background:linear-gradient(135deg,#0D2040,#07101E); border-color:rgba(232,137,74,0.2);">
+          <span class="sec-label" style="margin-bottom:8px;">Newsletter</span>
+          <h3 style="border:none;padding:0;margin-bottom:10px;color:#fff;">Get Weekly Stories</h3>
+          <p style="font-size:0.83rem;color:rgba(255,255,255,0.6);margin-bottom:16px;">Join 50K+ explorers for weekly travel inspiration.</p>
+          <form onsubmit="handleNewsletter(event)">
+            <input class="nl-input" type="email" placeholder="Your email" required style="margin-bottom:10px;border-radius:8px;" />
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Subscribe <i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p id="nl-msg" style="margin-top:10px;color:var(--gold);font-size:0.82rem;min-height:18px;"></p>
+        </div>
+
+      </aside>
+    </div><!-- /blog-page-grid -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><div class="logo-orb">🌍</div><span>Life<span class="logo-text-accent">_in</span> a Sphere</span></a>
+        <p>Your ultimate travel companion — exploring India's rich heritage and the world's most beautiful destinations.</p>
+        <div class="socials">
+          <a href="#" class="soc-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Categories</h4><nav class="footer-links"><a href="blog.html?cat=guides">Travel Guides</a><a href="blog.html?cat=tips">Travel Tips</a><a href="blog.html?cat=food">Food & Culture</a><a href="blog.html?cat=photography">Photography</a><a href="blog.html?cat=top10">Top 10 Lists</a></nav></div>
+      <div class="footer-col"><h4>Destinations</h4><nav class="footer-links"><a href="destinations.html?cat=india">India</a><a href="destinations.html?cat=asia">Asia</a><a href="destinations.html?cat=europe">Europe</a><a href="destinations.html?cat=beaches">Beaches</a></nav></div>
+      <div class="footer-col"><h4>Company</h4><nav class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="#">Write for Us</a><a href="#">Privacy</a></nav></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Life_in a Sphere. All rights reserved.</p>
+      <p>Made with ❤️ for explorers worldwide 🌏</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt"><i class="fas fa-chevron-up"></i></button>
+<script src="main.js"></script>
+<script>
+  /* Blog category filter */
+  document.querySelectorAll('.cat-btn[data-bcat]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-btn[data-bcat]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.bcat;
+      document.querySelectorAll('#blogList .blog-article').forEach(art => {
+        const cats = art.dataset.bcat || '';
+        art.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

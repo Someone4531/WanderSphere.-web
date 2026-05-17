@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Life_in a Sphere</title>
+  <meta name="description" content="Learn about Life_in a Sphere — our passion for travel, Indian culture and world tourism, and the team behind the magazine." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .about-sec { padding:100px 0; }
+    .about-sec-alt { padding:100px 0; background:var(--bg-secondary); }
+    .mission-banner {
+      padding:90px 0; text-align:center;
+      background:linear-gradient(135deg, #071426, #0D2040);
+      position:relative; overflow:hidden;
+    }
+    .mission-banner::before {
+      content:'"'; position:absolute; font-family:var(--font-display);
+      font-size:28rem; color:rgba(255,255,255,0.02);
+      top:-80px; left:50%; transform:translateX(-50%); line-height:1; pointer-events:none;
+    }
+    .mission-text {
+      font-family:var(--font-display); font-style:italic;
+      font-size:clamp(1.5rem,4.5vw,2.6rem); color:#fff; line-height:1.5;
+      max-width:860px; margin:0 auto 22px;
+    }
+    .mission-text span {
+      background:linear-gradient(135deg, var(--amber), var(--gold));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .stat-row {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:28px; margin-top:70px;
+    }
+    .stat-box {
+      background:var(--bg-card); border-radius:var(--radius-md);
+      padding:32px 24px; border:1px solid var(--border); text-align:center;
+      transition:var(--transition);
+    }
+    .stat-box:hover { border-color:var(--border-accent); transform:translateY(-5px); }
+    .stat-box .stat-num { font-size:2.6rem; }
+    .stat-box p { font-size:0.83rem; color:var(--text-secondary); margin-top:4px; }
+    @media(max-width:768px) {
+      .stat-row { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:480px) {
+      .stat-row { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-orb">🌍</div><span>Life<span class="logo-text-accent">_in</span> a Sphere</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+      <button class="nav-icon-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
+      <a href="destinations.html" class="btn btn-primary" style="padding:9px 22px;font-size:0.82rem">Explore</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="destinations.html">Destinations</a>
+  <a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="text" placeholder="Search destinations…" />
+      <button class="search-x" id="searchClose"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section style="padding:160px 0 84px;position:relative;overflow:hidden;background:var(--bg-secondary);text-align:center;">
+  <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=40') center/cover;opacity:0.1;"></div>
+  <div class="container" style="position:relative;">
+    <span class="sec-label">Our Story</span>
+    <h1 class="sec-title" style="font-size:clamp(2.4rem,6vw,4rem);">Where Every Mile <em>Becomes a Memory</em></h1>
+    <p class="sec-sub" style="margin:0 auto;">We are storytellers, explorers and culture enthusiasts — passionate about sharing the beauty of India and the world with curious travellers everywhere.</p>
+  </div>
+</section>
+
+<!-- INTRO SECTION -->
+<section class="about-sec">
+  <div class="container">
+    <div class="about-intro-grid">
+
+      <!-- Image Mosaic -->
+      <div class="about-img-mosaic reveal">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80" alt="Travel" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Explorer" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400&q=80" alt="Landscape" loading="lazy" />
+      </div>
+
+      <!-- Text -->
+      <div class="reveal delay-2">
+        <span class="sec-label">Who We Are</span>
+        <h2 class="sec-title">Born from a <em>Deep Love</em> for Travel</h2>
+        <p style="color:var(--text-secondary);line-height:1.88;margin-bottom:18px;font-size:0.97rem;">
+          <strong style="color:var(--text-primary);">Life_in a Sphere</strong> was born in 2022 from a single road trip through Rajasthan — three friends, one camera, and an insatiable curiosity about the world. What started as a personal journal grew into a full travel magazine trusted by over 50,000 explorers worldwide.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.88;margin-bottom:24px;font-size:0.97rem;">
+          Our mission is simple: to make the beauty, history and culture of India — and the entire world — accessible to every curious soul. We write not just as tourists, but as storytellers who believe every destination has a soul worth knowing.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.88;margin-bottom:32px;font-size:0.97rem;">
+          From the ancient ghats of Varanasi to the caldera cliffs of Santorini, from Ladakh's star-filled skies to Kerala's whispering canals — we bring you destinations as they truly are, complete with their complexity, beauty and wonder.
+        </p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="destinations.html" class="btn btn-primary"><i class="fas fa-compass"></i> Explore Destinations</a>
+          <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stat-row">
+      <div class="stat-box reveal">
+        <div class="stat-num">200+</div>
+        <p>Destinations Covered</p>
+      </div>
+      <div class="stat-box reveal delay-1">
+        <div class="stat-num">500+</div>
+        <p>Articles Published</p>
+      </div>
+      <div class="stat-box reveal delay-2">
+        <div class="stat-num">50K+</div>
+        <p>Monthly Readers</p>
+      </div>
+      <div class="stat-box reveal delay-3">
+        <div class="stat-num">30+</div>
+        <p>Countries Explored</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION QUOTE -->
+<section class="mission-banner">
+  <div class="container" style="position:relative;">
+    <p class="mission-text">
+      "We believe travel is not just about <span>seeing new places</span> —
+      it's about seeing yourself differently."
+    </p>
+    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;letter-spacing:0.15em;">— Life_in a Sphere Editorial Team</p>
+  </div>
+</section>
+
+<!-- OUR VALUES -->
+<section class="about-sec-alt">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:0;">
+      <span class="sec-label">What We Stand For</span>
+      <h2 class="sec-title">Our <em>Core Values</em></h2>
+      <p class="sec-sub" style="margin:0 auto 0;">Every story, guide and destination review is grounded in these principles.</p>
+    </div>
+    <div class="values-grid">
+      <div class="val-card reveal">
+        <span class="val-icon">🔍</span>
+        <h3 class="val-title">Authentic Storytelling</h3>
+        <p class="val-desc">We go beyond the tourist brochure. Every piece of content is researched in-person, with an honest eye for what makes each destination truly special — and what to watch out for.</p>
+      </div>
+      <div class="val-card reveal delay-1">
+        <span class="val-icon">🇮🇳</span>
+        <h3 class="val-title">Celebrating India</h3>
+        <p class="val-desc">India is our heartland. From the Himalayas to the Indian Ocean, from ancient temples to modern cities — we are devoted to showcasing every face of this extraordinary nation.</p>
+      </div>
+      <div class="val-card reveal delay-2">
+        <span class="val-icon">🌱</span>
+        <h3 class="val-title">Responsible Tourism</h3>
+        <p class="val-desc">We advocate for slow travel, local economy support and respect for cultural heritage. Every article considers the environmental and social impact of tourism recommendations.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">📸</span>
+        <h3 class="val-title">Visual Excellence</h3>
+        <p class="val-desc">Photography is the soul of our storytelling. We pair every destination guide with stunning visuals that transport you there before you buy the ticket.</p>
+      </div>
+      <div class="val-card reveal delay-1">
+        <span class="val-icon">🤝</span>
+        <h3 class="val-title">Community First</h3>
+        <p class="val-desc">Our 50,000+ community of readers, contributors and travel enthusiasts are the heart of this magazine. We grow together, share knowledge and inspire each other.</p>
+      </div>
+      <div class="val-card reveal delay-2">
+        <span class="val-icon">📖</span>
+        <h3 class="val-title">Deep Cultural Respect</h3>
+        <p class="val-desc">We approach every culture, religion and tradition with curiosity and reverence. Our guides help travellers connect meaningfully with the communities they visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="about-sec">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="sec-label">Meet the Team</span>
+      <h2 class="sec-title">The <em>Explorers Behind</em> the Stories</h2>
+      <p class="sec-sub" style="margin:0 auto 0;">A small but passionate team of writers, photographers and travel lovers united by a single belief: the world is worth knowing.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <img class="team-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Aryan Mehta" loading="lazy" />
+        <div class="team-body">
+          <h3 class="team-name">Aryan Mehta</h3>
+          <p class="team-role">Founder & Chief Explorer</p>
+          <p class="team-bio">Rajasthan native. Has visited 28 countries and every Indian state. Specialises in heritage travel, history and cultural storytelling.</p>
+        </div>
+      </div>
+      <div class="team-card reveal delay-1">
+        <img class="team-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Priya Sharma" loading="lazy" />
+        <div class="team-body">
+          <h3 class="team-name">Priya Sharma</h3>
+          <p class="team-role">Senior Travel Writer</p>
+          <p class="team-bio">South India and Southeast Asia specialist. Former journalist with a deep passion for food, local culture and off-the-beaten-path destinations.</p>
+        </div>
+      </div>
+      <div class="team-card reveal delay-2">
+        <img class="team-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Dev Kapoor" loading="lazy" />
+        <div class="team-body">
+          <h3 class="team-name">Dev Kapoor</h3>
+          <p class="team-role">Lead Photographer</p>
+          <p class="team-bio">Documentary photographer based in Mumbai. His work has appeared in National Geographic India and Conde Nast Traveller. Expert in landscape and portrait photography.</p>
+        </div>
+      </div>
+      <div class="team-card reveal delay-3">
+        <img class="team-img" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Meera Nair" loading="lazy" />
+        <div class="team-body">
+          <h3 class="team-name">Meera Nair</h3>
+          <p class="team-role">Kerala & Nature Editor</p>
+          <p class="team-bio">Born in Alleppey, Kerala. An expert in India's natural wonders, eco-tourism and the rich biodiversity of the Western Ghats. Yoga instructor and mindful travel advocate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS ON INDIA -->
+<section class="about-sec-alt">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;">
+      <div class="reveal">
+        <span class="sec-label">Our Focus</span>
+        <h2 class="sec-title">Deep Roots in <em>Indian Tourism</em></h2>
+        <p style="color:var(--text-secondary);line-height:1.88;margin-bottom:18px;">
+          India is a continent unto itself — 29 states, 8 Union Territories, 6 seasons, 22 official languages, and thousands of years of unbroken civilisation. No single lifetime is enough to explore it all, but we're determined to try.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.88;margin-bottom:26px;">
+          Our India coverage goes beyond the Golden Triangle of Delhi, Agra and Jaipur. We explore the remote Buddhist monasteries of Ladakh, the tribal cultures of Chhattisgarh, the colonial architecture of Pondicherry, the coral reefs of Lakshadweep, and the living traditions of every corner of this remarkable country.
+        </p>
+        <a href="destinations.html?cat=india" class="btn btn-primary"><i class="fas fa-map-marked-alt"></i> Explore India</a>
+      </div>
+      <div class="reveal delay-2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500&q=80" alt="Taj Mahal" style="border-radius:12px;width:100%;height:200px;object-fit:cover;" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1477587458883-47145ed68f07?w=500&q=80" alt="Varanasi" style="border-radius:12px;width:100%;height:200px;object-fit:cover;" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=500&q=80" alt="Ladakh" style="border-radius:12px;width:100%;height:200px;object-fit:cover;" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=500&q=80" alt="Jaipur" style="border-radius:12px;width:100%;height:200px;object-fit:cover;" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><div class="logo-orb">🌍</div><span>Life<span class="logo-text-accent">_in</span> a Sphere</span></a>
+        <p>Your ultimate travel companion — exploring India's rich heritage and the world's most beautiful destinations.</p>
+        <div class="socials">
+          <a href="#" class="soc-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Destinations</h4><nav class="footer-links"><a href="destinations.html?cat=india">India</a><a href="destinations.html?cat=asia">Asia</a><a href="destinations.html?cat=europe">Europe</a><a href="destinations.html?cat=beaches">Beaches</a></nav></div>
+      <div class="footer-col"><h4>Magazine</h4><nav class="footer-links"><a href="blog.html">All Articles</a><a href="blog.html?cat=guides">Guides</a><a href="blog.html?cat=food">Food</a><a href="blog.html?cat=top10">Top 10</a></nav></div>
+      <div class="footer-col"><h4>Company</h4><nav class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="#">Write for Us</a><a href="#">Privacy</a></nav></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Life_in a Sphere. All rights reserved.</p>
+      <p>Made with ❤️ for explorers worldwide 🌏</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt"><i class="fas fa-chevron-up"></i></button>
+<script src="main.js"></script>
+</body>
+</html>

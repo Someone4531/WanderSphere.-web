@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Life_in a Sphere</title>
+  <meta name="description" content="Get in touch with the Life_in a Sphere team for collaboration, travel pitches, advertising or general enquiries." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .contact-pg { padding:80px 0 100px; }
+    .success-msg {
+      display:none; padding:16px 22px;
+      background:rgba(74,180,100,0.12); border:1.5px solid rgba(74,180,100,0.3);
+      border-radius:var(--radius-sm); color:#4ab464; font-size:0.88rem;
+      margin-bottom:20px;
+    }
+    .success-msg.show { display:block; }
+    /* Social Links Section */
+    .soc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:28px; }
+    .soc-card {
+      display:flex; align-items:center; gap:12px;
+      padding:14px 18px; background:var(--bg-hover); border-radius:10px;
+      border:1px solid var(--border); cursor:pointer; transition:var(--transition);
+    }
+    .soc-card:hover { border-color:var(--amber); transform:translateY(-2px); }
+    .soc-card i { font-size:1.25rem; width:24px; text-align:center; }
+    .soc-card .sc-name { font-size:0.82rem; font-weight:700; color:var(--text-primary); }
+    .soc-card .sc-handle { font-size:0.73rem; color:var(--text-muted); }
+    /* FAQ */
+    .faq-item {
+      background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);
+      overflow:hidden; margin-bottom:12px;
+    }
+    .faq-q {
+      padding:17px 20px; cursor:pointer; display:flex; align-items:center;
+      justify-content:space-between; font-weight:700; font-size:0.9rem;
+      color:var(--text-primary); user-select:none; transition:color 0.3s;
+    }
+    .faq-q:hover { color:var(--amber); }
+    .faq-q i { transition:transform 0.3s ease; font-size:0.8rem; color:var(--amber); }
+    .faq-item.open .faq-q i { transform:rotate(180deg); }
+    .faq-a {
+      max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s;
+      padding:0 20px; font-size:0.86rem; color:var(--text-secondary); line-height:1.78;
+    }
+    .faq-item.open .faq-a { max-height:200px; padding:0 20px 18px; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-orb">🌍</div><span>Life<span class="logo-text-accent">_in</span> a Sphere</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+      <button class="nav-icon-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
+      <a href="destinations.html" class="btn btn-primary" style="padding:9px 22px;font-size:0.82rem">Explore</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="destinations.html">Destinations</a>
+  <a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="text" placeholder="Search destinations…" />
+      <button class="search-x" id="searchClose"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section style="padding:160px 0 84px;position:relative;overflow:hidden;background:var(--bg-secondary);text-align:center;">
+  <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1920&q=40') center/cover;opacity:0.1;"></div>
+  <div class="container" style="position:relative;">
+    <span class="sec-label">Say Hello</span>
+    <h1 class="sec-title" style="font-size:clamp(2.4rem,6vw,4rem);">We'd Love to <em>Hear From You</em></h1>
+    <p class="sec-sub" style="margin:0 auto;">Whether you're a travel writer, photographer, brand partner or simply a curious explorer — our inbox is always open.</p>
+  </div>
+</section>
+
+<!-- CONTACT MAIN -->
+<section class="contact-pg">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Info Column -->
+      <div>
+        <div class="reveal">
+          <h3>Get in Touch</h3>
+          <p>We respond to every message within 48 hours. Whether you want to pitch a story, ask about collaborations, or just share your travel photos with us — reach out!</p>
+        </div>
+
+        <div class="c-detail reveal delay-1">
+          <div class="c-icon">📧</div>
+          <div class="c-text">
+            <h4>Email Us</h4>
+            <p>hello@lifeinasphere.com</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);">Collaborations & press enquiries</p>
+          </div>
+        </div>
+        <div class="c-detail reveal delay-1">
+          <div class="c-icon">✏️</div>
+          <div class="c-text">
+            <h4>Write for Us</h4>
+            <p>contribute@lifeinasphere.com</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);">Submit your travel story pitch</p>
+          </div>
+        </div>
+        <div class="c-detail reveal delay-2">
+          <div class="c-icon">📸</div>
+          <div class="c-text">
+            <h4>Photography Submissions</h4>
+            <p>photos@lifeinasphere.com</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);">Share your travel photography</p>
+          </div>
+        </div>
+        <div class="c-detail reveal delay-2">
+          <div class="c-icon">📍</div>
+          <div class="c-text">
+            <h4>Based In</h4>
+            <p>Jaipur, Rajasthan, India 🇮🇳</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);">IST (UTC +5:30)</p>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="reveal delay-3" style="margin-top:32px;">
+          <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;">Follow Our Journey</p>
+          <div class="soc-grid">
+            <a href="#" class="soc-card">
+              <i class="fab fa-instagram" style="color:#E1306C;"></i>
+              <div><div class="sc-name">Instagram</div><div class="sc-handle">@lifeinasphere</div></div>
+            </a>
+            <a href="#" class="soc-card">
+              <i class="fab fa-youtube" style="color:#FF0000;"></i>
+              <div><div class="sc-name">YouTube</div><div class="sc-handle">Life_in a Sphere</div></div>
+            </a>
+            <a href="#" class="soc-card">
+              <i class="fab fa-x-twitter" style="color:var(--text-primary);"></i>
+              <div><div class="sc-name">X / Twitter</div><div class="sc-handle">@lifeinasphere</div></div>
+            </a>
+            <a href="#" class="soc-card">
+              <i class="fab fa-pinterest-p" style="color:#E60023;"></i>
+              <div><div class="sc-name">Pinterest</div><div class="sc-handle">@lifeinasphere</div></div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact Form -->
+      <div class="reveal delay-1">
+        <div class="cf-wrap">
+          <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--text-primary);margin-bottom:6px;">Send Us a Message</h3>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:26px;">Fill out the form and we'll get back to you within 48 hours.</p>
+
+          <div class="success-msg" id="successMsg">
+            <i class="fas fa-check-circle"></i> Thank you! Your message has been sent. We'll be in touch soon. ✈️
+          </div>
+
+          <form id="contactForm" onsubmit="handleContactForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input class="form-ctrl" type="text" placeholder="Aryan" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input class="form-ctrl" type="text" placeholder="Mehta" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input class="form-ctrl" type="email" placeholder="hello@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Subject *</label>
+              <select class="form-ctrl" required>
+                <option value="">Select a topic…</option>
+                <option>Story Pitch / Write for Us</option>
+                <option>Photography Submission</option>
+                <option>Brand Collaboration</option>
+                <option>General Enquiry</option>
+                <option>Press / Media</option>
+                <option>Website Feedback</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea class="form-ctrl" placeholder="Tell us about yourself and what you'd like to discuss…" required></textarea>
+            </div>
+            <div class="form-group" style="display:flex;align-items:center;gap:10px;">
+              <input type="checkbox" id="newsletter-opt" style="accent-color:var(--amber);width:15px;height:15px;" />
+              <label for="newsletter-opt" style="font-size:0.83rem;color:var(--text-secondary);font-weight:400;text-transform:none;letter-spacing:0;cursor:pointer;">
+                Subscribe to our weekly travel newsletter
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:15px;">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div><!-- /contact-grid -->
+
+    <!-- FAQ Section -->
+    <div style="max-width:720px;margin:80px auto 0;">
+      <div class="text-center reveal" style="margin-bottom:36px;">
+        <span class="sec-label">FAQ</span>
+        <h2 class="sec-title" style="font-size:2rem;">Frequently Asked <em>Questions</em></h2>
+      </div>
+
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I write a guest article for Life_in a Sphere? <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">Yes! We welcome passionate travel writers. Send us a brief pitch (2–3 paragraphs) about your article idea, your bio, and 2–3 sample links to your previous work at contribute@lifeinasphere.com. We'll respond within a week.</div>
+      </div>
+      <div class="faq-item reveal delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do I submit my travel photos? <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">We publish reader photography in our Visual Journal section. Email your best 5–10 shots (minimum 2000px wide, JPG/PNG) along with location details and a short caption to photos@lifeinasphere.com. We credit all published photographers.</div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do you offer brand collaborations or sponsored content? <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">Yes, we work with travel brands, hotels, airlines and tourism boards whose values align with authentic, responsible travel. Reach out at hello@lifeinasphere.com with "Collaboration" in the subject line, and include details about your brand and campaign goals.</div>
+      </div>
+      <div class="faq-item reveal delay-3">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Are your destination guides regularly updated? <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">We update major destination guides seasonally, especially for information like visa requirements, best travel seasons and pricing. Each guide shows its last-updated date at the top, and our team revisits popular destinations every 12–18 months.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How can I support the magazine? <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">The best support is sharing our articles! You can also subscribe to our newsletter, follow us on social media, and recommend us to fellow travellers. We're an independent magazine and reader support means everything to us.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><div class="logo-orb">🌍</div><span>Life<span class="logo-text-accent">_in</span> a Sphere</span></a>
+        <p>Your ultimate travel companion — exploring India's rich heritage and the world's most beautiful destinations.</p>
+        <div class="socials">
+          <a href="#" class="soc-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="soc-link"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Destinations</h4><nav class="footer-links"><a href="destinations.html?cat=india">India</a><a href="destinations.html?cat=asia">Asia</a><a href="destinations.html?cat=europe">Europe</a><a href="destinations.html?cat=beaches">Beaches</a></nav></div>
+      <div class="footer-col"><h4>Magazine</h4><nav class="footer-links"><a href="blog.html">All Articles</a><a href="blog.html?cat=guides">Guides</a><a href="blog.html?cat=food">Food</a></nav></div>
+      <div class="footer-col"><h4>Company</h4><nav class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="#">Privacy</a><a href="#">Sitemap</a></nav></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Life_in a Sphere. All rights reserved.</p>
+      <p>Made with ❤️ for explorers worldwide 🌏</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt"><i class="fas fa-chevron-up"></i></button>
+<script src="main.js"></script>
+<script>
+  function handleContactForm(e) {
+    e.preventDefault();
+    document.getElementById('successMsg').classList.add('show');
+    e.target.reset();
+    window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth' });
+  }
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
