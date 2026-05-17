@@ -1,2 +1,2 @@
-# WanderSphere.-web
+# WanderSphere.web
 This is my first webpage
